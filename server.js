@@ -7,6 +7,15 @@ const PORT = process.env.PORT || 3000;
 
 app.use(cors());
 app.use(express.json());
+const path = require("path");
+
+// Serve static files (frontend)
+app.use(express.static(__dirname));
+
+// Show index.html for root
+app.get("/", (req, res) => {
+  res.sendFile(path.join(__dirname, "index.html"));
+});
 
 // MongoDB connection string - UPDATE THIS with your MongoDB connection stringconst MONGODB_URI = process.env.MONGO_URI;
 const MONGODB_URI = process.env.MONGO_URI;
@@ -15,7 +24,7 @@ const DB_NAME = 'academy_management';
 let db;
 let client;
 
-// Connect to MongoDB
+// Connect to MongoDB 
 async function connectDB() {
   try {
     client = new MongoClient(MONGODB_URI);
