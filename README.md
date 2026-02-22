@@ -1,6 +1,6 @@
 # 🎓 Academy Management System - Fix Guide
 🌍 Live Demo
-https://your-app-name.onrender.com
+https://academy-management-system-vh8w.onrender.com
 
 ## 🚨 Problem: No Data Showing in Website
 
