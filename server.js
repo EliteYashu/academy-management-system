@@ -3,13 +3,13 @@ const cors = require('cors');
 const { MongoClient, ObjectId } = require('mongodb');
 
 const app = express();
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 
 app.use(cors());
 app.use(express.json());
 
-// MongoDB connection string - UPDATE THIS with your MongoDB connection string
-const MONGODB_URI = 'mongodb://localhost:27017';
+// MongoDB connection string - UPDATE THIS with your MongoDB connection stringconst MONGODB_URI = process.env.MONGO_URI;
+const MONGODB_URI = process.env.MONGO_URI;
 const DB_NAME = 'academy_management';
 
 let db;
